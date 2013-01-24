@@ -1,18 +1,17 @@
-package portal.empleos.picco
+package portal.empleos.picco.usuario
 
 
 
 import grails.test.mixin.*
-
 import org.junit.*
 
-import portal.empleos.picco.curriculum.Conocimiento
+import portal.empleos.picco.usuario.Persona;
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Conocimiento)
-class ConocimientoTests {
+@TestFor(Persona)
+class PersonaTests {
 
     void testSomething() {
        fail "Implement me"

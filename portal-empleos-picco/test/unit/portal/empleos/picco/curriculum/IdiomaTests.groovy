@@ -1,13 +1,13 @@
-package portal.empleos.picco
+package portal.empleos.picco.curriculum
 
 import grails.test.mixin.TestFor
-import portal.empleos.picco.busqueda.Postulacion
+import portal.empleos.picco.curriculum.Idioma
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Postulacion)
-class PostulacionTests {
+@TestFor(Idioma)
+class IdiomaTests {
 
     void testSomething() {
        fail "Implement me"

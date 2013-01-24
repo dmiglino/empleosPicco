@@ -1,4 +1,4 @@
-package portal.empleos.picco
+package portal.empleos.picco.busqueda
 
 import grails.test.mixin.*
 
