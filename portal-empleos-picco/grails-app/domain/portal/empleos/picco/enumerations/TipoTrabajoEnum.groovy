@@ -1,4 +1,4 @@
-package groovy
+package portal.empleos.picco.enumerations
 
 /**
  * Enum de Tipos de Trabajos. <br>

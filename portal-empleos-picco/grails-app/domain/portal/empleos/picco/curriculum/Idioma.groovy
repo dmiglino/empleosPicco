@@ -1,6 +1,6 @@
 package portal.empleos.picco.curriculum
 
-import groovy.IdiomaEnum
+import portal.empleos.picco.enumerations.IdiomaEnum;
 
 /**
  * Representa los idiomas que posee el usuario

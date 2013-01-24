@@ -1,6 +1,6 @@
 package portal.empleos.picco.curriculum
 
-import groovy.ConocimientoEnum
+import portal.empleos.picco.enumerations.ConocimientoEnum;
 
 /**
  * Representa los conocimientos que posee el usuario
