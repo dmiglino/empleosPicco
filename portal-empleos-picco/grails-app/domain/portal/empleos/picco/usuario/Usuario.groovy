@@ -1,6 +1,8 @@
 package portal.empleos.picco.usuario
 
-abstract class Usuario {
+import portal.empleos.picco.PortalEmpleosEntity
+
+abstract class Usuario extends PortalEmpleosEntity {
 
 	String direccion, telefono, mail, mailAlternativo, presentacion
 	

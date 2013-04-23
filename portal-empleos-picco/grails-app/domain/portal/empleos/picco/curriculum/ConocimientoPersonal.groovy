@@ -1,16 +1,17 @@
 package portal.empleos.picco.curriculum
 
-import portal.empleos.picco.enumerations.ConocimientoEnum;
+import portal.empleos.picco.PortalEmpleosEntity
 
 /**
  * Representa los conocimientos que posee el usuario
  * @author Diego Miglino
  */
-class Conocimiento {
+class ConocimientoPersonal extends PortalEmpleosEntity {
 	
-	ConocimientoEnum conocimiento
 	String nivel, tiempoExperiencia
-	CurriculumVitae curriculum
+	ConocimientoPersonal conocimiento
+	
+	static belongsTo = [ CurriculumVitae curriculum ]
 	
     static constraints = {
     }

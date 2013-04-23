@@ -1,5 +1,11 @@
 package portal.empleos.picco.enumerations
 
+/**
+ * Enum de Conocimiento. <br>
+ * JAVA_PROGRAMADOR_SISTEMAS, SPRING_PROGRAMADOR_SISTEMAS, HIBERNATE_PROGRAMADOR_SISTEMAS, etc.
+ * @author Diego Miglino
+ */
+@Deprecated
 enum ConocimientoEnum {
 	
 	JAVA_PROGRAMADOR_SISTEMAS("JAVA",TipoTrabajoEnum.PROGRAMADOR_SISTEMAS),

@@ -1,22 +1,27 @@
 package portal.empleos.picco.busqueda
 
+import portal.empleos.picco.PortalEmpleosEntity
+import portal.empleos.picco.enumerations.Conocimiento
+import portal.empleos.picco.enumerations.IdiomaEnum
 import portal.empleos.picco.usuario.Empresa
-
 
 /**
  * Busqueda creada por una Empresa.
  * Cualquier persona podra postularse a ella.
  * @author Diego Miglino
  */
-class Busqueda {
+class Busqueda extends PortalEmpleosEntity {
 
-	Empresa empresa
 	String zona, textoLibre
 	Float sueldoOfrecido
-	List idiomasSolicitados
-	List conocimientosSolicitados
-	List postulaciones
+	
+	static belongsTo = [Empresa empresa]
+
+//	static hasMany = [idiomasSolicitados : IdiomaEnum, conocimientosSolicitados : Conocimiento, postulaciones : Postulacion]
 	
     static constraints = {
+		zona blank:true
+		textoLibre blank:true
+		sueldoOfrecido nullable:true
     }
 }
