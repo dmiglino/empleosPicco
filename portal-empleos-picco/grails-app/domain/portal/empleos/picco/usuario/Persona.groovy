@@ -10,13 +10,41 @@ import portal.empleos.picco.enumerations.TipoTrabajo
  */
 class Persona extends Usuario {
 
-	String nombre, apellido, celular, intereses
+	String nombre, apellido, intereses, cuil
+	Integer celular, dni
 	CurriculumVitae curriculum
 	
-	static hasMany = [postulaciones : Postulacion, interesesTrabajos : TipoTrabajo]
+	static hasMany = [postulaciones : Postulacion, interesesTipoTrabajos : TipoTrabajo]
 	
     static constraints = {
-		intereses blank:true
+		nombre blank:false
+		apellido blank:false
+		dni blank:false
+		cuil nullable:true
+		intereses nullable:true
+		celular nullable:true
 		curriculum nullable:true
     }
+	
+	@Override
+	String toString() {
+		"${nombre} ${apellido}"
+	}
+	
+	Integer getInteresesTipoTrabajosCount() {
+		interesesTipoTrabajos.size()
+	}
+	
+	Integer getPostulacionesCount() {
+		postulaciones.size()
+	}
+	
+	Boolean hasInterestIn(TipoTrabajo tt) {
+		interesesTipoTrabajos.contains(tt)
+	}
+	
+	Boolean isPostulatedTo(Postulacion postulation) {
+		postulaciones.contains(postulation)
+	}
+
 }

@@ -9,9 +9,21 @@ import portal.empleos.picco.PortalEmpleosEntity
  */
 class Conocimiento extends PortalEmpleosEntity {
 
-	private String nombre
-	private TipoTrabajo tipo
+	String nombre
+	TipoTrabajo tipo
 	
     static constraints = {
+		nombre blank: false
+		tipo nullable: false
     }
+	
+	@Override
+	String toString() {
+		"${nombre} (${tipo.nombre} - ${tipo.rubro})";
+	}
+	
+	Boolean isTipo(String nombreTipo, String rubroTipo) {
+		tipo.equals(new TipoTrabajo(nombre:nombreTipo, rubro:rubroTipo))
+	}
+	
 }

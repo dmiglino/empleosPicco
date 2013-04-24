@@ -9,9 +9,16 @@ import portal.empleos.picco.PortalEmpleosEntity
  */
 class Institucion extends PortalEmpleosEntity {
 	
-	private String nombre
-	private Boolean privada
+	String nombre
+	Boolean privada
 	
     static constraints = {
+		nombre blank: false
+		privada nullable: false
     }
+	
+	@Override
+	String toString() {
+		"${nombre}";
+	}
 }

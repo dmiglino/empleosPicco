@@ -19,6 +19,15 @@ class TipoTrabajo extends PortalEmpleosEntity {
 	
 	@Override
 	String toString() {
-		"${nombre} (rubro: ${rubro})";
+		"${nombre} (rubro: ${rubro})"
+	}
+	
+	@Override
+	boolean equals(Object obj) {
+		if (!(obj instanceof TipoTrabajo)) {
+			return false
+		}
+		TipoTrabajo otroTipo = (TipoTrabajo) obj
+		return this.nombre.equals(otroTipo.nombre) && this.rubro.equals(otroTipo.rubro)
 	}
 }
