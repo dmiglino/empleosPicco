@@ -67,9 +67,9 @@ class EmpresaTests {
 	}
 	
 	void testBusquedaList() {
-		Busqueda busqueda1 = new Busqueda(remuneracionPretendida:5000f, textoPresentacionPostulante:"Hola.")
-		Busqueda busqueda2 = new Busqueda(remuneracionPretendida:6000f, textoPresentacionPostulante:"Hola..")
-		Busqueda busqueda3 = new Busqueda(remuneracionPretendida:7000f, textoPresentacionPostulante:"Hola...")
+		Busqueda busqueda1 = new Busqueda(sueldoOfrecido:5000f, zona:"Hola.")
+		Busqueda busqueda2 = new Busqueda(sueldoOfrecido:6000f, zona:"Hola..")
+		Busqueda busqueda3 = new Busqueda(sueldoOfrecido:7000f, zona:"Hola...")
 		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
 		
 		empresa.addToBusquedas(busqueda1)

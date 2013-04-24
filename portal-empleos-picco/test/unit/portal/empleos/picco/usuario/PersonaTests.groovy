@@ -101,4 +101,5 @@ class PersonaTests {
 		assertNull postulacion2.persona
 		assertNull postulacion3.persona
 	}
+	
 }

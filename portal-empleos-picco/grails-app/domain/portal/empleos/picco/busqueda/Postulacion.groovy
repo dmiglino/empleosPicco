@@ -12,7 +12,7 @@ class Postulacion extends PortalEmpleosEntity {
 	Float remuneracionPretendida
 	String textoPresentacionPostulante
 
-	static belongsTo = [ persona : Persona , busqueda : Busqueda ]
+	static belongsTo = [ persona : Persona ]
 	
     static constraints = {
 		remuneracionPretendida blank:true

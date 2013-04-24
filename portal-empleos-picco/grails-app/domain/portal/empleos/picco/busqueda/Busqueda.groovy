@@ -15,13 +15,13 @@ class Busqueda extends PortalEmpleosEntity {
 	String zona, textoLibre
 	Float sueldoOfrecido
 	
-	static belongsTo = [empresa : Empresa ]
+	static belongsTo = [empresa : Empresa]
 
 	static hasMany = [idiomasSolicitados : IdiomaEnum, conocimientosSolicitados : Conocimiento, postulaciones : Postulacion]
 	
     static constraints = {
-		zona blank:true
-		textoLibre blank:true
+		zona nullable:true
+		textoLibre nullable:true
 		sueldoOfrecido nullable:true
     }
 }
