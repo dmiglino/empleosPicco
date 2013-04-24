@@ -1,14 +1,17 @@
 package portal.empleos.picco.usuario
 
 import static org.junit.Assert.*
+import groovy.util.GroovyTestCase;
 
 import org.junit.*
 
 import portal.empleos.picco.busqueda.Busqueda
 import portal.empleos.picco.enumerations.TipoTrabajo
+import portal.empleos.picco.exception.InvalidEntityException
+import portal.empleos.picco.utils.DBUtils
 
 
-class EmpresaIntegrationTests {
+class EmpresaIntegrationTests extends GroovyTestCase {
 
 	void testSaveAndDeleteEmpresaWithPostulaciones() {
 		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME").save()
@@ -53,5 +56,17 @@ class EmpresaIntegrationTests {
 		tipos = TipoTrabajo.findAll()
 		assertEquals 3, tipos.size()
 	}
-
+	
+	void testSave() {
+		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
+		Empresa empresaPersistida = DBUtils.validateAndSave(empresa)
+		assertEquals empresa, empresaPersistida
+	}
+	
+	void testFailSave() {
+		Empresa empresa = new Empresa()
+		shouldFail(InvalidEntityException) {
+			DBUtils.validateAndSave(empresa)
+		}
+	}
 }

@@ -15,22 +15,24 @@ class DBUtils {
 	 * Valida la entidad antes de persistirla.
 	 * @param flushValue
 	 */
-	static void validateAndSave(def entity, boolean flushValue) {
+	static def validateAndSave(def entity, boolean flushValue) {
 		if(entity.validate())
 			entity.save(flush:flushValue)
 		else
 			throw new InvalidEntityException(entity.errors)
+
+		return entity
 	}
 	
-	static void validateAndSave(def entity) {
+	static def validateAndSave(def entity) {
 		validateAndSave(entity, true)
 	}
 	
-	static void validateAndSave(List entities) {
+	static def validateAndSave(List entities) {
 		validateAndSave(entities, true)
 	}
 	
-	static void validateAndSave(List entities, boolean flushValue) {
+	static def validateAndSave(List entities, boolean flushValue) {
 		entities.each {
 			validateAndSave(it, flushValue)
 		}
