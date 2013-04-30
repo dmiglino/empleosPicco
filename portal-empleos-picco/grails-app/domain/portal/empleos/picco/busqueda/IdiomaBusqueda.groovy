@@ -1,4 +1,4 @@
-package portal.empleos.picco.curriculum
+package portal.empleos.picco.busqueda
 
 import portal.empleos.picco.PortalEmpleosEntity
 import portal.empleos.picco.enumerations.IdiomaEnum
@@ -6,17 +6,16 @@ import portal.empleos.picco.enumerations.Institucion
 import portal.empleos.picco.enumerations.NivelDeConocimientoEnum;
 
 /**
- * Representa los idiomas que posee el usuario
+ * Representa los idiomas que solicita la busqueda
  * @author Diego Miglino
  */
-class IdiomaPersonal extends PortalEmpleosEntity {
+class IdiomaBusqueda extends PortalEmpleosEntity {
 	
 	IdiomaEnum idioma
 	String tiempoExperiencia
 	NivelDeConocimientoEnum nivel
 
-	static hasMany = [ instituciones : Institucion ]
-	static belongsTo = [ CurriculumVitae curriculum ]
+	static belongsTo = [ Busqueda busqueda ]
 	
     static constraints = {
 		nivel nullable:false

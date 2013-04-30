@@ -9,5 +9,11 @@ class Curso extends ExperienciaPersonal {
 	String titulo
 	
     static constraints = {
+		titulo blank:false
     }
+	
+	@Override
+	String toString() {
+		"${titulo} en ${institucion}";
+	}
 }

@@ -18,7 +18,7 @@ class CurriculumVitae extends PortalEmpleosEntity {
 		
     static constraints = {
 		archivo nullable:true
-		textoLibre blank:true
-		presentacion blank:true
+		textoLibre nullable:true
+		presentacion nullable:true
     }
 }

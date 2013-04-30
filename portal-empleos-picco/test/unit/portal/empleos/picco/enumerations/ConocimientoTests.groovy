@@ -47,4 +47,18 @@ class ConocimientoTests {
 		assertEquals "DESARROLLO (rubro: SISTEMAS)", conocimiento.tipo.toString()
 	}
 	
+	void testEquals() {
+		TipoTrabajo tipoTrabajo1 = new TipoTrabajo(nombre:"PROGRAMADOR", rubro:"SISTEMAS")
+		TipoTrabajo tipoTrabajo2 = new TipoTrabajo(nombre:"PROGRAMADOR", rubro:"SISTEMAS")
+		TipoTrabajo tipoTrabajo3 = new TipoTrabajo(nombre:"CIRUJANO", rubro:"MEDICINA")
+		Conocimiento conocimiento1 = new Conocimiento(nombre:"JAVA", tipo:tipoTrabajo1)
+		Conocimiento conocimiento2 = new Conocimiento(nombre:"JAVA", tipo:tipoTrabajo2)
+		Conocimiento conocimiento3 = new Conocimiento(nombre:"JAVA", tipo:tipoTrabajo3)
+		
+		assertTrue conocimiento1.equals(conocimiento1)
+		assertTrue conocimiento1.equals(conocimiento2)
+		assertFalse conocimiento1.equals(conocimiento3)
+		assertFalse conocimiento2.equals(conocimiento3)
+		assertFalse conocimiento1.equals(new Institucion())
+	}
 }

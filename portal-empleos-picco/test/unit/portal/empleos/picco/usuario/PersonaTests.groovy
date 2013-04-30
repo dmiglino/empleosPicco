@@ -5,6 +5,7 @@ import grails.test.mixin.*
 import org.junit.*
 
 import portal.empleos.picco.busqueda.Postulacion
+import portal.empleos.picco.curriculum.CurriculumVitae
 import portal.empleos.picco.enumerations.TipoTrabajo
 
 @TestFor(Persona)

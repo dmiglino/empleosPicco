@@ -16,9 +16,9 @@ abstract class PortalEmpleosException extends RuntimeException {
 		log.error(message, this)
 	}
 
-	Map getResponseMap() {
-		["message":message, "error":error, "cause":internalCause, "status":status]
-	}
+//	Map getResponseMap() {
+//		["message":message, "error":error, "cause":internalCause, "status":status]
+//	}
 	
 	static String getNameForClass(String fullName) {
 		int lastIndex = fullName?.lastIndexOf(".")

@@ -1,7 +1,7 @@
 package portal.empleos.picco.curriculum
 
 import portal.empleos.picco.PortalEmpleosEntity
-
+import portal.empleos.picco.enumerations.Institucion;
 
 
 /**
@@ -10,16 +10,21 @@ import portal.empleos.picco.PortalEmpleosEntity
  */
 abstract class ExperienciaPersonal extends PortalEmpleosEntity {
 
-	String nombreInstitucion, textoLibre
+	String textoLibre
 	Date fechaInicio, fechaFin
-	
-	static hasMany = [ proyectos : Proyecto ]
+	Institucion institucion
 	
 	static belongsTo = CurriculumVitae
 	
     static constraints = {
+		institucion nullable:false
 		textoLibre blank:true
+		fechaInicio nullable:false
 		fechaFin nullable:true
     }
+
+	Boolean wasIn(Institucion institucion) {
+		this.institucion.equals(institucion)
+	}
 
 }

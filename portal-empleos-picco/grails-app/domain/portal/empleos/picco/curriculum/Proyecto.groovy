@@ -1,6 +1,8 @@
 package portal.empleos.picco.curriculum
 
 import portal.empleos.picco.PortalEmpleosEntity
+import portal.empleos.picco.enumerations.Conocimiento
+import portal.empleos.picco.enumerations.TipoTrabajo;
 
 /**
  * Representa los proyectos en que trabajo el usuario
@@ -8,9 +10,21 @@ import portal.empleos.picco.PortalEmpleosEntity
  */
 class Proyecto extends PortalEmpleosEntity {
 
-	String nombre, herramientasUtilizadas, duracion
+	String nombre, duracion
+	static hasMany = [ herramientasUtilizadas : Conocimiento ]
 	
     static constraints = {
-		duracion blank : true
+		nombre blank : false
+		duracion blank : false
     }
+	
+	@Override
+	String toString() {
+		"${nombre} (${duracion})";
+	}
+	
+	Boolean hasConocimiento(Conocimiento conoc) {
+		herramientasUtilizadas.contains(conoc)
+	}
+	
 }

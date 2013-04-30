@@ -1,11 +1,12 @@
 package portal.empleos.picco.usuario
 
 import static org.junit.Assert.*
-import groovy.util.GroovyTestCase;
 
 import org.junit.*
 
+import portal.empleos.picco.busqueda.Busqueda
 import portal.empleos.picco.busqueda.Postulacion
+import portal.empleos.picco.curriculum.CurriculumVitae
 import portal.empleos.picco.enumerations.TipoTrabajo
 import portal.empleos.picco.exception.InvalidEntityException
 import portal.empleos.picco.utils.DBUtils
@@ -15,9 +16,13 @@ class PersonaIntegrationTests extends GroovyTestCase {
 
 	void testSaveAndDeletePersonaWithPostulaciones() {
 		Persona persona = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com").save()
-		Postulacion postulacion1 = new Postulacion(remuneracionPretendida:5000f, textoPresentacionPostulante:"Hola.")
-		Postulacion postulacion2 = new Postulacion(remuneracionPretendida:6000f, textoPresentacionPostulante:"Hola..")
-		Postulacion postulacion3 = new Postulacion(remuneracionPretendida:7000f, textoPresentacionPostulante:"Hola...")
+		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME").save()
+		Busqueda busqueda = new Busqueda(sueldoOfrecido:5000f, zona:"Hola.", titulo:"busqueda 1", empresa:empresa).save()
+		empresa.addToBusquedas(busqueda)
+
+		Postulacion postulacion1 = new Postulacion(remuneracionPretendida:5000f, textoPresentacionPostulante:"Hola.", persona:persona, busqueda:busqueda).save()
+		Postulacion postulacion2 = new Postulacion(remuneracionPretendida:6000f, textoPresentacionPostulante:"Hola..", persona:persona, busqueda:busqueda).save()
+		Postulacion postulacion3 = new Postulacion(remuneracionPretendida:7000f, textoPresentacionPostulante:"Hola...", persona:persona, busqueda:busqueda).save()
 		
 		persona.addToPostulaciones(postulacion1)
 		persona.addToPostulaciones(postulacion2)
@@ -57,10 +62,23 @@ class PersonaIntegrationTests extends GroovyTestCase {
 		assertEquals 3, tipos.size()
 	}
 	
+	void testPersonaCV() {
+		CurriculumVitae cv = new CurriculumVitae(presentacion:"hola soy diego", textoLibre:"este es mi cv")
+		Persona persona = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com", curriculum:cv)
+		persona.save()
+		assertEquals 1, CurriculumVitae.list().size()
+		persona.delete()
+		assertEquals 0, CurriculumVitae.list().size()
+	}
+	
 	void testSave() {
-		Persona persona = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com")
-		Persona personaPersistida = DBUtils.validateAndSave(persona)
-		assertEquals persona, personaPersistida
+		Persona persona1 = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com")
+		Persona persona2 = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com")
+		Persona persona3 = new Persona(nombre:"Diego", apellido:"Martin", dni:30303303, email:"meli@meli.com")
+		Persona personaPersistida = DBUtils.validateAndSave(persona1)
+		DBUtils.validateAndSave([persona2,persona3])
+		assertEquals persona1, personaPersistida
+		assertEquals 3, Persona.findAll().size()
 	}
 	
 	void testFailSave() {

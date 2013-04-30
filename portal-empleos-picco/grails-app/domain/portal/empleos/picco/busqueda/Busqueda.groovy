@@ -12,16 +12,50 @@ import portal.empleos.picco.usuario.Empresa
  */
 class Busqueda extends PortalEmpleosEntity {
 
-	String zona, textoLibre
+	String zona, titulo, textoLibre
 	Float sueldoOfrecido
 	
 	static belongsTo = [empresa : Empresa]
 
-	static hasMany = [idiomasSolicitados : IdiomaEnum, conocimientosSolicitados : Conocimiento, postulaciones : Postulacion]
+	static hasMany = [idiomasSolicitados : IdiomaBusqueda, conocimientosSolicitados : ConocimientoBusqueda, postulaciones : Postulacion]
 	
     static constraints = {
-		zona nullable:true
+		titulo blank:false
+		zona blank:false
 		textoLibre nullable:true
 		sueldoOfrecido nullable:true
     }
+	
+	@Override
+	String toString() {
+		String empresaTxt = ""
+		if(empresa)
+			empresaTxt = " de la empresa ${empresa}"
+		"${titulo} en ${zona}${empresaTxt}"
+	}
+	
+	Boolean hasIdioma(IdiomaEnum idioma) {
+		Boolean resultado
+		for (IdiomaBusqueda unIdioma : idiomasSolicitados) {
+			resultado = unIdioma.isIdioma(idioma)
+			if(resultado)
+				break
+		}
+		resultado
+	}
+	
+	Boolean hasConocimiento(Conocimiento conocimiento) {
+		Boolean resultado
+		for (ConocimientoBusqueda unConocimiento : conocimientosSolicitados) {
+			resultado = unConocimiento.isConocimiento(conocimiento)
+			if(resultado)
+				break
+		}
+		resultado
+	}
+	
+	Integer countPostulaciones() {
+		postulaciones.size()
+	}
+
 }

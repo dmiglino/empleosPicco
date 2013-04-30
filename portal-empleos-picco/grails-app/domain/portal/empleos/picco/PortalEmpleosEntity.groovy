@@ -8,8 +8,4 @@ abstract class PortalEmpleosEntity {
 	Long failures = 0
 	String error = ""
 	
-	static constraints = {
-		jobId nullable:false
-		error nullable:false
-	}
 }

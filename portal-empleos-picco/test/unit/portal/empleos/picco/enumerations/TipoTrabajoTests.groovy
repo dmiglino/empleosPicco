@@ -1,6 +1,7 @@
 package portal.empleos.picco.enumerations
 
 import grails.test.mixin.*
+
 import org.junit.*
 
 
@@ -44,5 +45,6 @@ class TipoTrabajoTests {
 		assertTrue tipoTrabajo2.equals(tipoTrabajo1)
 		assertFalse tipoTrabajo1.equals(tipoTrabajo3)
 		assertFalse tipoTrabajo3.equals(tipoTrabajo2)
+		assertFalse tipoTrabajo3.equals(new Institucion())
 	}
 }

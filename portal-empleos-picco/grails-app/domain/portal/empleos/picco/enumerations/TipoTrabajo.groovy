@@ -30,4 +30,9 @@ class TipoTrabajo extends PortalEmpleosEntity {
 		TipoTrabajo otroTipo = (TipoTrabajo) obj
 		return this.nombre.equals(otroTipo.nombre) && this.rubro.equals(otroTipo.rubro)
 	}
+	
+	@Override
+	public int hashCode() {
+		return (this.nombre && this.rubro) ? this.nombre.hashCode() + this.rubro.hashCode() : super.hashCode();
+	}
 }

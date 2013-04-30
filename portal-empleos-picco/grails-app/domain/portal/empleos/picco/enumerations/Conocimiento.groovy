@@ -26,4 +26,22 @@ class Conocimiento extends PortalEmpleosEntity {
 		tipo.equals(new TipoTrabajo(nombre:nombreTipo, rubro:rubroTipo))
 	}
 	
+	Boolean isTipo(TipoTrabajo tipo) {
+		isTipo(tipo.nombre, tipo.rubro)
+	}
+	
+	@Override
+	boolean equals(Object obj) {
+		if (!(obj instanceof Conocimiento)) {
+			return false
+		}
+		Conocimiento otroConocimiento = (Conocimiento) obj
+		return this.nombre.equals(otroConocimiento.nombre) && this.isTipo(otroConocimiento.tipo)
+	}
+	
+	@Override
+	public int hashCode() {
+		return (this.nombre && this.tipo) ? this.nombre.hashCode() + this.tipo.hashCode() : super.hashCode();
+	}
+	
 }

@@ -1,7 +1,6 @@
 package portal.empleos.picco.usuario
 
 import static org.junit.Assert.*
-import groovy.util.GroovyTestCase;
 
 import org.junit.*
 
@@ -15,9 +14,9 @@ class EmpresaIntegrationTests extends GroovyTestCase {
 
 	void testSaveAndDeleteEmpresaWithPostulaciones() {
 		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME").save()
-		Busqueda busqueda1 = new Busqueda(sueldoOfrecido:5000f, zona:"Hola.")
-		Busqueda busqueda2 = new Busqueda(sueldoOfrecido:6000f, zona:"Hola..")
-		Busqueda busqueda3 = new Busqueda(sueldoOfrecido:7000f, zona:"Hola...")
+		Busqueda busqueda1 = new Busqueda(sueldoOfrecido:5000f, zona:"Hola.", titulo:"busqueda 1")
+		Busqueda busqueda2 = new Busqueda(sueldoOfrecido:6000f, zona:"Hola..", titulo:"busqueda 2")
+		Busqueda busqueda3 = new Busqueda(sueldoOfrecido:7000f, zona:"Hola...", titulo:"busqueda 3")
 		
 		empresa.addToBusquedas(busqueda1)
 		empresa.addToBusquedas(busqueda2)
@@ -58,9 +57,13 @@ class EmpresaIntegrationTests extends GroovyTestCase {
 	}
 	
 	void testSave() {
-		Empresa empresa = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
-		Empresa empresaPersistida = DBUtils.validateAndSave(empresa)
-		assertEquals empresa, empresaPersistida
+		Empresa empresa1 = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
+		Empresa empresa2 = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
+		Empresa empresa3 = new Empresa(denominacion:"MELI", email:"meli@meli.com", razonSocial: "PYME")
+		Empresa empresaPersistida = DBUtils.validateAndSave(empresa1)
+		DBUtils.validateAndSave([empresa2,empresa3])
+		assertEquals empresa1, empresaPersistida
+		assertEquals 3, Empresa.findAll().size()
 	}
 	
 	void testFailSave() {

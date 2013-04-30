@@ -6,9 +6,9 @@ class InvalidEntityException extends PortalEmpleosException {
 	
 	def entity
 	
-	InvalidEntityException(String className, def json) {
-		super("El JSON ["+json+"] para la entidad ["+className+"] es invalido.");
-	}
+//	InvalidEntityException(String className, def json) {
+//		super("El JSON ["+json+"] para la entidad ["+className+"] es invalido.");
+//	}
 	
 	InvalidEntityException(def errors) {
 		super("El/La [" + PortalEmpleosException.getNameForClass(errors) + " " + errors?.target + "] es invalido/a. Errors: " + errors);
