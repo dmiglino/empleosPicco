@@ -56,6 +56,6 @@ grails.project.dependency.resolution = {
 }
 
 coverage {
-	exclusions = []
-	sourceInclusions = []
+	exclusions = ["**/ApplicationResources*"]
+	sourceInclusions = ['grails-app/jobs']
 }
