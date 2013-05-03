@@ -1,20 +1,23 @@
 package portal.empleos.picco.usuario
 
 import portal.empleos.picco.PortalEmpleosEntity
+import portal.empleos.picco.enumerations.Ciudad
 
 abstract class Usuario extends PortalEmpleosEntity {
 
-	String direccion, email, emailAlternativo, presentacion
+	String domicilio, email, emailAlternativo, presentacion
 	Integer telefono
+	Ciudad ciudad
 	
     static constraints = {
-		direccion nullable : true
+		domicilio nullable : true
 		telefono nullable : true
-		presentacion nullable : true
+		ciudad nullable : false
 		email blank : false
 		email email : true
 		emailAlternativo nullable : true
 		emailAlternativo email : true
+		presentacion nullable : true
     }
 
 }

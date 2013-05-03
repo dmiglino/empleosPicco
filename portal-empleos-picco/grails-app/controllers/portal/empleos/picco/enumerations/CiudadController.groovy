@@ -1,6 +1,6 @@
 package portal.empleos.picco.enumerations
 
-class ConocimientoController {
+class CiudadController {
 	def scaffold = true
 //    def index() { }
 }

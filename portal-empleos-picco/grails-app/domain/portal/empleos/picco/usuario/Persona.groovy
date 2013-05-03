@@ -13,6 +13,16 @@ class Persona extends Usuario {
 	String nombre, apellido, intereses, cuil
 	Integer celular, dni
 	CurriculumVitae curriculum
+
+/**
+ * Representa a un usuario de tipo persona, que cargará su CV y aplicara a busquedas.
+ * @author Diego Miglino
+ */
+class Persona extends Usuario {
+
+	String nombre, apellido, intereses, cuil
+	Integer celular, dni
+	CurriculumVitae curriculum
 	
 	static hasMany = [postulaciones : Postulacion, interesesTipoTrabajos : TipoTrabajo]
 	
