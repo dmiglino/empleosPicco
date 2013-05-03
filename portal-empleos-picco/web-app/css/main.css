@@ -47,8 +47,9 @@ body {
 	        box-shadow: 0 0 0.3em #255b17;
 }
 
-#grailsLogo {
+#portalLogo {
 	background-color: #abbf78;
+	align:center;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -89,7 +90,8 @@ img {
 
 /* GENERAL */
 
-#grailsLogo a {
+#portalLogo a {
+	position: relative;
 	display: inline-block;
 	margin: 1em;
 }

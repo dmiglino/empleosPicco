@@ -24,6 +24,8 @@ class Busqueda extends PortalEmpleosEntity {
 		zona blank:false
 		textoLibre nullable:true
 		sueldoOfrecido nullable:true
+		idiomasSolicitados()
+		conocimientosSolicitados()
     }
 	
 	@Override

@@ -9,4 +9,10 @@ class Ciudad {
 		ciudad nullable:false
 		pais nullable:false
     }
+	
+	@Override
+	String toString() {
+		"${ciudad} - (${provincia} / ${pais})"
+	}
+
 }
