@@ -1,6 +1,7 @@
 <%@ page import="portal.empleos.picco.enumerations.Ciudad" %>
 
 
+
 <div class="fieldcontain ${hasErrors(bean: ciudadInstance, field: 'ciudad', 'error')} ">
 	<label for="ciudad">
 		<g:message code="ciudad.ciudad.label" default="Ciudad" />

@@ -1,6 +1,6 @@
+
 <%@ page import="portal.empleos.picco.enumerations.Ciudad" %>
 <!doctype html>
-
 <html>
 	<head>
 		<meta name="layout" content="main" />
@@ -20,26 +20,34 @@
 		</div>
 		<div id="results-ciudad" class="content scaffold-list" role="main">
 		
-			<g:set var="total" value="${portal.empleos.picco.enumerations.Ciudad.count()}" />
-			<g:set var="encontradas" value="${ciudades.size()}" />
+			<g:set var="total" value="${Ciudad.count()}" />
+			<g:set var="encontradas" value="${ciudadInstanceList.size()}" />
 		
-			<h1><g:message code="default.results.label" args="[total,encontradas,entityPluralName]" /></h1>
+			<h1><g:message code="default.results.text" args="[total,encontradas,entityPluralName]" /></h1>
 			<table>
 				<thead>
 					<tr>
+						
 						<g:sortableColumn property="ciudad" title="${message(code: 'ciudad.ciudad.label', default: 'Ciudad')}" />
+						
 						<g:sortableColumn property="provincia" title="${message(code: 'ciudad.provincia.label', default: 'Provincia')}" />
+						
 						<g:sortableColumn property="pais" title="${message(code: 'ciudad.pais.label', default: 'Pais')}" />
+						
 					</tr>
 				</thead>
 				<tbody>
-					<g:each var="ciudadInstance" status="i" in="${ciudades}">
-						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-							<td><g:link action="edit" id="${ciudadInstance.id}">${fieldValue(bean: ciudadInstance, field: "ciudad")}</g:link></td>
-							<td>${fieldValue(bean: ciudadInstance, field: "provincia")}</td>
-							<td>${fieldValue(bean: ciudadInstance, field: "pais")}</td>
-						</tr>
-					</g:each>
+					<g:each in="${ciudadInstanceList}" status="i" var="ciudadInstance">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+						
+						<td><g:link action="edit" id="${ciudadInstance.id}">${fieldValue(bean: ciudadInstance, field: "ciudad")}</g:link></td>
+						
+						<td>${fieldValue(bean: ciudadInstance, field: "provincia")}</td>
+						
+						<td>${fieldValue(bean: ciudadInstance, field: "pais")}</td>
+						
+					</tr>
+				</g:each>
 				</tbody>
 			</table>
 			<div class="pagination">

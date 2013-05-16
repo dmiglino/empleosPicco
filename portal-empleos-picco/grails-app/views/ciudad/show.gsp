@@ -24,20 +24,20 @@
 			</g:if>
 			<ol class="property-list ciudad">
 			
-				<g:if test="${ciudadInstance?.provincia}">
-				<li class="fieldcontain">
-					<span id="provincia-label" class="property-label"><g:message code="ciudad.provincia.label" default="Provincia" /></span>
-					
-						<span class="property-value" aria-labelledby="provincia-label"><g:fieldValue bean="${ciudadInstance}" field="provincia"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${ciudadInstance?.ciudad}">
 				<li class="fieldcontain">
 					<span id="ciudad-label" class="property-label"><g:message code="ciudad.ciudad.label" default="Ciudad" /></span>
 					
 						<span class="property-value" aria-labelledby="ciudad-label"><g:fieldValue bean="${ciudadInstance}" field="ciudad"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${ciudadInstance?.provincia}">
+				<li class="fieldcontain">
+					<span id="provincia-label" class="property-label"><g:message code="ciudad.provincia.label" default="Provincia" /></span>
+					
+						<span class="property-value" aria-labelledby="provincia-label"><g:fieldValue bean="${ciudadInstance}" field="provincia"/></span>
 					
 				</li>
 				</g:if>

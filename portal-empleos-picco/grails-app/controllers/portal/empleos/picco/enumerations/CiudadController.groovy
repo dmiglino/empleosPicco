@@ -30,8 +30,8 @@ class CiudadController {
 			}
 			order("ciudad", "asc")
 		}
-		
-		return [ ciudades: ciudades, term : params.ciudad ]
+		println ciudades
+		return [ ciudadInstanceList: ciudades ]
 	}
 
 }

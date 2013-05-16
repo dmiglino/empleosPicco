@@ -1,6 +1,6 @@
+
 <%@ page import="portal.empleos.picco.enumerations.Ciudad" %>
 <!doctype html>
-
 <html>
 	<head>
 		<meta name="layout" content="main" />
@@ -24,18 +24,22 @@
 					<table>
 						<tbody>
 							<tr class="prop">
+						
 								<td valign="top" class="name">
-									<label for="ciudad">Ciudad</label>
+									<label for="ciudad" >${message(code: 'ciudad.ciudad.label', default: 'Ciudad')}</label>
 									<g:textField name="ciudad" />
 								</td>
+							
 								<td valign="top" class="name">
-									<label for="provincia">Provincia</label>
+									<label for="provincia" >${message(code: 'ciudad.provincia.label', default: 'Provincia')}</label>
 									<g:textField name="provincia" />
 								</td>
+							
 								<td valign="top" class="name">
-									<label for="pais">Pais</label>
+									<label for="pais" >${message(code: 'ciudad.pais.label', default: 'Pais')}</label>
 									<g:textField name="pais" />
 								</td>
+							
 							</tr>
 						</tbody>
 					</table>
