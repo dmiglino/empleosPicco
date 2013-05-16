@@ -19,6 +19,7 @@ class Institucion extends PortalEmpleosEntity {
 	
 	@Override
 	String toString() {
-		"${nombre}";
+		"${nombre}"
 	}
+
 }

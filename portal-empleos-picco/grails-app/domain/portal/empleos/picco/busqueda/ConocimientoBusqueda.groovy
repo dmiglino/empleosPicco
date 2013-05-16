@@ -32,4 +32,7 @@ class ConocimientoBusqueda extends PortalEmpleosEntity {
 		this.conocimiento.equals(conocimiento)
 	}
 	
+	String getNombre() {
+		conocimiento?.nombre
+	}
 }
