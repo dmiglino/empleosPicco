@@ -1,15 +1,15 @@
 
-<%@ page import="portal.empleos.picco.busqueda.Busqueda" %>
+<%@ page import="portal.empleos.picco.usuario.Persona" %>
 <!doctype html>
 <html>
 	<head>
 		<meta name="layout" content="main" />
-		<g:set var="entityName" value="${message(code: 'busqueda.label', default: 'Busqueda')}" />
-		<g:set var="entityPluralName" value="${message(code: 'busquedaes.label', default: 'Busquedaes')}" />
+		<g:set var="entityName" value="${message(code: 'persona.label', default: 'Persona')}" />
+		<g:set var="entityPluralName" value="${message(code: 'personaes.label', default: 'Personaes')}" />
 		<title><g:message code="default.search.label" args="[entityPluralName]" /></title>
 	</head>
 	<body>
-		<a href="#search-busqueda" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#search-persona" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -17,7 +17,7 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
-		<div id="search-busqueda" class="content scaffold-list" role="main">
+		<div id="search-persona" class="content scaffold-list" role="main">
 			<h1><g:message code="default.search.text" args="[entityPluralName]" /></h1>
 			<g:form action="results">
 				<div class="dialog">
@@ -26,33 +26,33 @@
 							<tr class="prop">
 						
 								<td valign="top" class="name">
-									<label for="titulo" >${message(code: 'busqueda.titulo.label', default: 'Titulo')}</label>
-									<g:textField name="titulo" />
+									<label for="domicilio" >${message(code: 'persona.domicilio.label', default: 'Domicilio')}</label>
+									<g:textField name="domicilio" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="zona" >${message(code: 'busqueda.zona.label', default: 'Zona')}</label>
-									<g:textField name="zona" />
+									<label for="telefono" >${message(code: 'persona.telefono.label', default: 'Telefono')}</label>
+									<g:textField name="telefono" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="textoLibre" >${message(code: 'busqueda.textoLibre.label', default: 'Texto Libre')}</label>
-									<g:textField name="textoLibre" />
+									<label for="ciudad" >${message(code: 'persona.ciudad.label', default: 'Ciudad')}</label>
+									<g:textField name="ciudad" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="sueldoOfrecido" >${message(code: 'busqueda.sueldoOfrecido.label', default: 'Sueldo Ofrecido')}</label>
-									<g:textField name="sueldoOfrecido" />
+									<label for="email" >${message(code: 'persona.email.label', default: 'Email')}</label>
+									<g:textField name="email" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="dateCreated" >${message(code: 'busqueda.dateCreated.label', default: 'Date Created')}</label>
-									<g:textField name="dateCreated" />
+									<label for="emailAlternativo" >${message(code: 'persona.emailAlternativo.label', default: 'Email Alternativo')}</label>
+									<g:textField name="emailAlternativo" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="empresa" >${message(code: 'busqueda.empresa.label', default: 'Empresa')}</label>
-									<g:textField name="empresa" />
+									<label for="presentacion" >${message(code: 'persona.presentacion.label', default: 'Presentacion')}</label>
+									<g:textField name="presentacion" />
 								</td>
 							
 							</tr>
