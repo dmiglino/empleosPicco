@@ -42,27 +42,3 @@
 	<g:textField name="titulo" required="" value="${cursoInstance?.titulo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="curso.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${cursoInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="curso.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${cursoInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="curso.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${cursoInstance?.jobId}"/>
-</div>
-

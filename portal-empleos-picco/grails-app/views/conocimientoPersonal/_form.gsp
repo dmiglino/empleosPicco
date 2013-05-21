@@ -26,27 +26,3 @@
 	<g:textField name="tiempoExperiencia" value="${conocimientoPersonalInstance?.tiempoExperiencia}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: conocimientoPersonalInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="conocimientoPersonal.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${conocimientoPersonalInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: conocimientoPersonalInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="conocimientoPersonal.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${conocimientoPersonalInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: conocimientoPersonalInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="conocimientoPersonal.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${conocimientoPersonalInstance?.jobId}"/>
-</div>
-

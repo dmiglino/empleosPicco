@@ -91,30 +91,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="empresa.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${empresaInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="empresa.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${empresaInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="empresa.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${empresaInstance?.jobId}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'tipoTrabajoOfrecidos', 'error')} ">
 	<label for="tipoTrabajoOfrecidos">
 		<g:message code="empresa.tipoTrabajoOfrecidos.label" default="Tipo Trabajo Ofrecidos" />

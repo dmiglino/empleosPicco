@@ -114,36 +114,12 @@
 	<g:select id="curriculum" name="curriculum.id" from="${portal.empleos.picco.curriculum.CurriculumVitae.list()}" optionKey="id" value="${personaInstance?.curriculum?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="persona.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${personaInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="persona.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${personaInstance.failures}" required=""/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'interesesTipoTrabajos', 'error')} ">
 	<label for="interesesTipoTrabajos">
 		<g:message code="persona.interesesTipoTrabajos.label" default="Intereses Tipo Trabajos" />
 		
 	</label>
 	<g:select name="interesesTipoTrabajos" from="${portal.empleos.picco.enumerations.TipoTrabajo.list()}" multiple="multiple" optionKey="id" size="5" value="${personaInstance?.interesesTipoTrabajos*.id}" class="many-to-many"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="persona.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${personaInstance?.jobId}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: personaInstance, field: 'postulaciones', 'error')} ">

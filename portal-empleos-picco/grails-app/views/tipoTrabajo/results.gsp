@@ -21,9 +21,9 @@
 		<div id="results-tipoTrabajo" class="content scaffold-list" role="main">
 		
 			<g:set var="total" value="${TipoTrabajo.count()}" />
-			<g:set var="encontradas" value="${tipoTrabajoInstance.size()}" />
+			<g:set var="encontradas" value="${tipoTrabajoInstanceList.size()}" />
 		
-			<h1><g:message code="default.results.label" args="[total,encontradas,entityPluralName]" /></h1>
+			<h1><g:message code="default.results.text" args="[total,encontradas,entityPluralName]" /></h1>
 			<table>
 				<thead>
 					<tr>

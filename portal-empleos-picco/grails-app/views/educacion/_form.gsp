@@ -50,27 +50,3 @@
 	<g:field name="promedio" value="${fieldValue(bean: educacionInstance, field: 'promedio')}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: educacionInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="educacion.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${educacionInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: educacionInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="educacion.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${educacionInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: educacionInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="educacion.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${educacionInstance?.jobId}"/>
-</div>
-

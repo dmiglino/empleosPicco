@@ -26,17 +26,17 @@
 							<tr class="prop">
 						
 								<td valign="top" class="name">
-									<label for="nombre" title="${message(code: 'tipoTrabajo.nombre.label', default: 'Nombre')}" />
+									<label for="nombre" >${message(code: 'tipoTrabajo.nombre.label', default: 'Nombre')}</label>
 									<g:textField name="nombre" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="rubro" title="${message(code: 'tipoTrabajo.rubro.label', default: 'Rubro')}" />
+									<label for="rubro" >${message(code: 'tipoTrabajo.rubro.label', default: 'Rubro')}</label>
 									<g:textField name="rubro" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="dateCreated" title="${message(code: 'tipoTrabajo.dateCreated.label', default: 'Date Created')}" />
+									<label for="dateCreated" >${message(code: 'tipoTrabajo.dateCreated.label', default: 'Date Created')}</label>
 									<g:textField name="dateCreated" />
 								</td>
 							

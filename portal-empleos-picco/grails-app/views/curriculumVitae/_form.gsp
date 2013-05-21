@@ -50,35 +50,11 @@
 	<g:select name="educacion" from="${portal.empleos.picco.curriculum.Educacion.list()}" multiple="multiple" optionKey="id" size="5" value="${curriculumVitaeInstance?.educacion*.id}" class="many-to-many"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: curriculumVitaeInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="curriculumVitae.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${curriculumVitaeInstance?.error}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: curriculumVitaeInstance, field: 'experienciasLaborales', 'error')} ">
 	<label for="experienciasLaborales">
 		<g:message code="curriculumVitae.experienciasLaborales.label" default="Experiencias Laborales" />
 		
 	</label>
 	<g:select name="experienciasLaborales" from="${portal.empleos.picco.curriculum.Trabajo.list()}" multiple="multiple" optionKey="id" size="5" value="${curriculumVitaeInstance?.experienciasLaborales*.id}" class="many-to-many"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: curriculumVitaeInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="curriculumVitae.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${curriculumVitaeInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: curriculumVitaeInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="curriculumVitae.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${curriculumVitaeInstance?.jobId}"/>
 </div>
 

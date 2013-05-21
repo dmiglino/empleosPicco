@@ -26,30 +26,6 @@
 	<g:select id="busqueda" name="busqueda.id" from="${portal.empleos.picco.busqueda.Busqueda.list()}" optionKey="id" required="" value="${postulacionInstance?.busqueda?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: postulacionInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="postulacion.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${postulacionInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: postulacionInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="postulacion.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${postulacionInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: postulacionInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="postulacion.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${postulacionInstance?.jobId}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: postulacionInstance, field: 'persona', 'error')} required">
 	<label for="persona">
 		<g:message code="postulacion.persona.label" default="Persona" />

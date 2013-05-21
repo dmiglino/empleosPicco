@@ -26,27 +26,3 @@
 	<g:textField name="tiempoExperiencia" value="${idiomaBusquedaInstance?.tiempoExperiencia}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: idiomaBusquedaInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="idiomaBusqueda.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${idiomaBusquedaInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: idiomaBusquedaInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="idiomaBusqueda.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${idiomaBusquedaInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: idiomaBusquedaInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="idiomaBusqueda.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${idiomaBusquedaInstance?.jobId}"/>
-</div>
-

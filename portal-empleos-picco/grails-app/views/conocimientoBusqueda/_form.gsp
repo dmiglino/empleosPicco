@@ -26,27 +26,3 @@
 	<g:textField name="tiempoExperiencia" value="${conocimientoBusquedaInstance?.tiempoExperiencia}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: conocimientoBusquedaInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="conocimientoBusqueda.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${conocimientoBusquedaInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: conocimientoBusquedaInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="conocimientoBusqueda.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${conocimientoBusquedaInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: conocimientoBusquedaInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="conocimientoBusqueda.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${conocimientoBusquedaInstance?.jobId}"/>
-</div>
-

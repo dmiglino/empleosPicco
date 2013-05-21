@@ -50,30 +50,6 @@
 	<g:textField name="funcion" value="${trabajoInstance?.funcion}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: trabajoInstance, field: 'error', 'error')} ">
-	<label for="error">
-		<g:message code="trabajo.error.label" default="Error" />
-		
-	</label>
-	<g:textField name="error" value="${trabajoInstance?.error}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: trabajoInstance, field: 'failures', 'error')} required">
-	<label for="failures">
-		<g:message code="trabajo.failures.label" default="Failures" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="failures" type="number" value="${trabajoInstance.failures}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: trabajoInstance, field: 'jobId', 'error')} ">
-	<label for="jobId">
-		<g:message code="trabajo.jobId.label" default="Job Id" />
-		
-	</label>
-	<g:textField name="jobId" value="${trabajoInstance?.jobId}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: trabajoInstance, field: 'proyectos', 'error')} ">
 	<label for="proyectos">
 		<g:message code="trabajo.proyectos.label" default="Proyectos" />
