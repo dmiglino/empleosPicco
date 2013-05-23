@@ -1,7 +1,6 @@
 package portal.empleos.picco.usuario
 
 import portal.empleos.picco.busqueda.Busqueda
-import portal.empleos.picco.busqueda.Postulacion;
 import portal.empleos.picco.enumerations.TipoTrabajo
 
 /**
