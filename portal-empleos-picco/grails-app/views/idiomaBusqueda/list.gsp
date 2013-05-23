@@ -33,10 +33,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'idiomaBusqueda.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'idiomaBusqueda.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'idiomaBusqueda.failures.label', default: 'Failures')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -50,10 +46,6 @@
 						<td>${fieldValue(bean: idiomaBusquedaInstance, field: "tiempoExperiencia")}</td>
 					
 						<td><g:formatDate date="${idiomaBusquedaInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: idiomaBusquedaInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: idiomaBusquedaInstance, field: "failures")}</td>
 					
 					</tr>
 				</g:each>

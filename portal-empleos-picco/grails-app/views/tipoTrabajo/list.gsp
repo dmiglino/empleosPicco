@@ -31,12 +31,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'tipoTrabajo.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'tipoTrabajo.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'tipoTrabajo.failures.label', default: 'Failures')}" />
-					
-						<g:sortableColumn property="jobId" title="${message(code: 'tipoTrabajo.jobId.label', default: 'Job Id')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -48,12 +42,6 @@
 						<td>${fieldValue(bean: tipoTrabajoInstance, field: "rubro")}</td>
 					
 						<td><g:formatDate date="${tipoTrabajoInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: tipoTrabajoInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: tipoTrabajoInstance, field: "failures")}</td>
-					
-						<td>${fieldValue(bean: tipoTrabajoInstance, field: "jobId")}</td>
 					
 					</tr>
 				</g:each>

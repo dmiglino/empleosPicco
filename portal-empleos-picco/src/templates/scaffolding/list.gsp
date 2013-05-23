@@ -24,7 +24,7 @@
 			<table>
 				<thead>
 					<tr>
-					<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
+					<%  excludedProps = Event.allEvents.toList() << 'id' << 'version' << 'jobId' << 'failures' << 'error'
 						allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
 						props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type) }
 						Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))

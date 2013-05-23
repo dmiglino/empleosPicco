@@ -31,12 +31,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'institucion.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'institucion.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'institucion.failures.label', default: 'Failures')}" />
-					
-						<g:sortableColumn property="jobId" title="${message(code: 'institucion.jobId.label', default: 'Job Id')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -48,12 +42,6 @@
 						<td><g:formatBoolean boolean="${institucionInstance.privada}" /></td>
 					
 						<td><g:formatDate date="${institucionInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "failures")}</td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "jobId")}</td>
 					
 					</tr>
 				</g:each>

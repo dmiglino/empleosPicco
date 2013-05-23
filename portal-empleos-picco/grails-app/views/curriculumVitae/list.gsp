@@ -33,10 +33,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'curriculumVitae.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'curriculumVitae.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'curriculumVitae.failures.label', default: 'Failures')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -50,10 +46,6 @@
 						<td>${fieldValue(bean: curriculumVitaeInstance, field: "presentacion")}</td>
 					
 						<td><g:formatDate date="${curriculumVitaeInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: curriculumVitaeInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: curriculumVitaeInstance, field: "failures")}</td>
 					
 					</tr>
 				</g:each>
