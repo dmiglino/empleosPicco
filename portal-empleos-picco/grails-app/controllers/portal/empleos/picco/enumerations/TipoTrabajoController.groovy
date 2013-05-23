@@ -8,8 +8,8 @@ class TipoTrabajoController {
 	}
 	
 	def results = {
-		def tiposTrabajo = TipoTrabajo.findAllByNombre(params.nombreTipo)
-		return [ tiposTrabajo: tiposTrabajo, term : params.nombreTipo ]
+		def tiposTrabajo = TipoTrabajo.findAllByNombre(params.nombre)
+		render(view: "list", model: [ tipoTrabajoInstanceList: tiposTrabajo , tipoTrabajoInstanceTotal : tiposTrabajo.size(), fromSearch:true ])
 	}
 
 }

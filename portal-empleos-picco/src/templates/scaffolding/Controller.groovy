@@ -10,7 +10,7 @@ class ${className}Controller {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count()]
+        [${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count(), fromSearch:false]
     }
 
     def create() {
@@ -103,6 +103,6 @@ class ${className}Controller {
 	
 	def results(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
-		[${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count()]
+		render(view: "list", model: [ ${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count(), fromSearch:true ] )
 	}
 }

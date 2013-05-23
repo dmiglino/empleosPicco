@@ -29,7 +29,11 @@
 							props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type) }
 							Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
 							props.eachWithIndex { p, i ->
-							if (i < 6) { %>
+							if (i < 6) { 
+								if( props.size() > 3 && (i==2 || i==4) ) { %>
+									</tr>
+									<tr class="prop">
+								<% } %>
 								<td valign="top" class="name">
 									<label for="${p.name}" >\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${p.naturalName}')}</label>
 									<g:textField name="${p.name}" />

@@ -8,30 +8,21 @@ class CiudadController {
 	}
 	
 	def results = {
-//		def ciudades = Ciudad.withCriteria {
-//			and {
-//				eq('ciudad', params.ciudad)
-//				eq('provincia', params.provincia)
-//				eq('pais', params.pais)
-//			}
-//			order("ciudad", "asc")
-//		}
 		
 		def ciudadProps = Ciudad.metaClass.properties*.name
 		def ciudades = Ciudad.withCriteria {
 //			"${params.queryType}" {
 			and {
 				params.each { field, value ->
-					if (ciudadProps.grep(field)
-					&& value) {
+					if (ciudadProps.grep(field) && value) {
 						eq(field, value)
 					}
 				}
 			}
 			order("ciudad", "asc")
 		}
-		println ciudades
-		return [ ciudadInstanceList: ciudades ]
+//		return [ ciudadInstanceList: ciudades ]
+		render(view: "list", model: [ ciudadInstanceList: ciudades , ciudadInstanceTotal : ciudades.size(), fromSearch:true ])
 	}
 
 }

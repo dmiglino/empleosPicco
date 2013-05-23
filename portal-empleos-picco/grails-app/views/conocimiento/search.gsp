@@ -35,11 +35,6 @@
 									<g:textField name="tipo" />
 								</td>
 							
-								<td valign="top" class="name">
-									<label for="dateCreated" >${message(code: 'conocimiento.dateCreated.label', default: 'Date Created')}</label>
-									<g:textField name="dateCreated" />
-								</td>
-							
 							</tr>
 						</tbody>
 					</table>

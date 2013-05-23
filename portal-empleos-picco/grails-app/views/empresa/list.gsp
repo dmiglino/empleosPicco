@@ -13,7 +13,12 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				<g:if test="${!fromSearch}">
+					<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				</g:if>
+				<g:if test="${fromSearch}">
+					<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				</g:if>
 			</ul>
 		</div>
 		<div id="list-empresa" class="content scaffold-list" role="main">
@@ -25,17 +30,17 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="denominacion" title="${message(code: 'empresa.denominacion.label', default: 'Denominacion')}" />
+					
+						<g:sortableColumn property="razonSocial" title="${message(code: 'empresa.razonSocial.label', default: 'Razon Social')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'empresa.email.label', default: 'Email')}" />
+					
 						<g:sortableColumn property="domicilio" title="${message(code: 'empresa.domicilio.label', default: 'Domicilio')}" />
 					
 						<g:sortableColumn property="telefono" title="${message(code: 'empresa.telefono.label', default: 'Telefono')}" />
 					
-						<th><g:message code="empresa.ciudad.label" default="Ciudad" /></th>
-					
-						<g:sortableColumn property="email" title="${message(code: 'empresa.email.label', default: 'Email')}" />
-					
-						<g:sortableColumn property="emailAlternativo" title="${message(code: 'empresa.emailAlternativo.label', default: 'Email Alternativo')}" />
-					
-						<g:sortableColumn property="presentacion" title="${message(code: 'empresa.presentacion.label', default: 'Presentacion')}" />
+						<th><g:message code="empresa.busquedas.label" default="Busquedas" /></th>
 					
 					</tr>
 				</thead>
@@ -43,17 +48,17 @@
 				<g:each in="${empresaInstanceList}" status="i" var="empresaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${empresaInstance.id}">${fieldValue(bean: empresaInstance, field: "domicilio")}</g:link></td>
+						<td><g:link action="show" id="${empresaInstance.id}">${fieldValue(bean: empresaInstance, field: "denominacion")}</g:link></td>
 					
-						<td>${fieldValue(bean: empresaInstance, field: "telefono")}</td>
-					
-						<td>${fieldValue(bean: empresaInstance, field: "ciudad")}</td>
+						<td>${fieldValue(bean: empresaInstance, field: "razonSocial")}</td>
 					
 						<td>${fieldValue(bean: empresaInstance, field: "email")}</td>
 					
-						<td>${fieldValue(bean: empresaInstance, field: "emailAlternativo")}</td>
+						<td>${fieldValue(bean: empresaInstance, field: "domicilio")}</td>
 					
-						<td>${fieldValue(bean: empresaInstance, field: "presentacion")}</td>
+						<td>${fieldValue(bean: empresaInstance, field: "telefono")}</td>
+					
+						<td><g:link action="showBusquedas" id="${empresaInstance.id}">Ver Busquedas</g:link></td>
 					
 					</tr>
 				</g:each>

@@ -13,7 +13,12 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				<g:if test="${!fromSearch}">
+					<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				</g:if>
+				<g:if test="${fromSearch}">
+					<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				</g:if>
 			</ul>
 		</div>
 		<div id="list-persona" class="content scaffold-list" role="main">
@@ -25,17 +30,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="domicilio" title="${message(code: 'persona.domicilio.label', default: 'Domicilio')}" />
+						<g:sortableColumn property="nombre" title="${message(code: 'persona.nombre.label', default: 'Nombre')}" />
 					
-						<g:sortableColumn property="telefono" title="${message(code: 'persona.telefono.label', default: 'Telefono')}" />
+						<g:sortableColumn property="apellido" title="${message(code: 'persona.apellido.label', default: 'Apellido')}" />
 					
-						<th><g:message code="persona.ciudad.label" default="Ciudad" /></th>
+						<g:sortableColumn property="dni" title="${message(code: 'persona.dni.label', default: 'Dni')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'persona.email.label', default: 'Email')}" />
 					
-						<g:sortableColumn property="emailAlternativo" title="${message(code: 'persona.emailAlternativo.label', default: 'Email Alternativo')}" />
+						<g:sortableColumn property="celular" title="${message(code: 'persona.celular.label', default: 'Celular')}" />
 					
-						<g:sortableColumn property="presentacion" title="${message(code: 'persona.presentacion.label', default: 'Presentacion')}" />
+						<g:sortableColumn property="curriculum" title="${message(code: 'persona.curriculum.label', default: 'Curriculum')}" />
 					
 					</tr>
 				</thead>
@@ -43,17 +48,17 @@
 				<g:each in="${personaInstanceList}" status="i" var="personaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "domicilio")}</g:link></td>
+						<td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "nombre")}</g:link></td>
 					
-						<td>${fieldValue(bean: personaInstance, field: "telefono")}</td>
+						<td>${fieldValue(bean: personaInstance, field: "apellido")}</td>
 					
-						<td>${fieldValue(bean: personaInstance, field: "ciudad")}</td>
+						<td>${fieldValue(bean: personaInstance, field: "dni")}</td>
 					
 						<td>${fieldValue(bean: personaInstance, field: "email")}</td>
 					
-						<td>${fieldValue(bean: personaInstance, field: "emailAlternativo")}</td>
+						<td>${fieldValue(bean: personaInstance, field: "celular")}</td>
 					
-						<td>${fieldValue(bean: personaInstance, field: "presentacion")}</td>
+						<td><g:link action="showCurriculum" id="${personaInstance.curriculum?.id}">Ver CV</g:link></td>
 					
 					</tr>
 				</g:each>

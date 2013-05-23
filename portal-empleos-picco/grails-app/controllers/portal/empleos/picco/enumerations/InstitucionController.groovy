@@ -8,8 +8,8 @@ class InstitucionController {
 	}
 	
 	def results = {
-		def instituciones = Institucion.findAllByNombre(params.institucionNombre)
-		return [ instituciones: instituciones, term : params.institucionNombre ]
+		def instituciones = Institucion.findAllByNombre(params.nombre)
+		render(view: "list", model: [ institucionInstanceList: instituciones , institucionInstanceTotal : instituciones.size(), fromSearch:true ])
 	}
 	
 }
