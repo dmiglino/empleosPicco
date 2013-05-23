@@ -32,7 +32,7 @@ class EmpresaTests {
 		assertEquals "PYME", empresa.razonSocial
 		assertEquals "meli@meli.com", empresa.email
 		assertEquals "meliAlt@meli.com", empresa.emailAlternativo
-		assertEquals "Arias 123", empresa.direccion
+		assertEquals "Arias 123", empresa.domicilio
 		assertEquals 123456, empresa.telefono
 		assertEquals "hola hola", empresa.presentacion
 	} 

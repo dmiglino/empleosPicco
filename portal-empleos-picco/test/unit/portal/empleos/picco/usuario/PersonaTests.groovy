@@ -40,7 +40,7 @@ class PersonaTests {
 		assertEquals "30-30303303-3", persona.cuil
 		assertEquals "meli@meli.com", persona.email
 		assertEquals "meliAlt@meli.com", persona.emailAlternativo
-		assertEquals "Arias 123", persona.direccion
+		assertEquals "Arias 123", persona.domicilio
 		assertEquals 123456, persona.telefono
 		assertEquals 654321, persona.celular
 		assertEquals "hola hola", persona.presentacion

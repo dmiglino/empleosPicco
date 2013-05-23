@@ -39,7 +39,7 @@ class BusquedaTests {
 		assertEquals "PYME", busqueda.empresa.razonSocial
 		assertEquals "meli@meli.com", busqueda.empresa.email
 		assertEquals "meliAlt@meli.com", busqueda.empresa.emailAlternativo
-		assertEquals "Arias 123", busqueda.empresa.direccion
+		assertEquals "Arias 123", busqueda.empresa.domicilio
 	} 
 	
 	void testToString() {
