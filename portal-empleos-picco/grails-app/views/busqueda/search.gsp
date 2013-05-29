@@ -13,8 +13,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="search-busqueda" class="content scaffold-list" role="main">
@@ -35,6 +35,9 @@
 									<g:textField name="zona" />
 								</td>
 							
+									</tr>
+									<tr class="prop">
+								
 								<td valign="top" class="name">
 									<label for="textoLibre" >${message(code: 'busqueda.textoLibre.label', default: 'Texto Libre')}</label>
 									<g:textField name="textoLibre" />
@@ -45,6 +48,9 @@
 									<g:textField name="sueldoOfrecido" />
 								</td>
 							
+									</tr>
+									<tr class="prop">
+								
 								<td valign="top" class="name">
 									<label for="dateCreated" >${message(code: 'busqueda.dateCreated.label', default: 'Date Created')}</label>
 									<g:textField name="dateCreated" />
