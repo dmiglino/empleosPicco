@@ -1,28 +1,33 @@
 package portal.empleos.picco.busqueda
 
-import portal.empleos.picco.usuario.Empresa
+import org.springframework.dao.DataIntegrityViolationException
 
 class BusquedaController {
-	def scaffold = true
+
+	BusquedaService BbusquedaService
+    def scaffold = true
 	
-	def search() { }
+    def index() {
+        redirect(action: "list", params: params)
+    }
+
+    def save() {
+		println "hola nueva busquedaaaa"
+        def busquedaInstance = new Busqueda(params)
+        if (!busquedaInstance.save(flush: true)) {
+            render(view: "create", model: [busquedaInstance: busquedaInstance])
+            return
+        }
+		
+        flash.message = message(code: 'default.created.message', args: [message(code: 'busqueda.label', default: 'Busqueda'), busquedaInstance.id])
+        redirect(action: "show", id: busquedaInstance.id)
+    }
 	
-	def searchResults = {
-		def empresa = Empresa.findById(params.empresaId)
-		def busquedas = Busqueda.withCriteria {
-			and {
-				eq('empresa', empresa)
-				between('dateCreated', new Date()-30, new Date())
-				conocimientosSolicitados { 
-					conocimiento {
-						eq('nombre', params.nombreConocimientoBuscado) 
-					}
-				}
-			}
-			maxResults(10)
-			order("dateCreated", "desc")
-		}
-		return [ busquedas: busquedas, term : params.nombreConocimientoBuscado ]
+	def search = {
 	}
 	
+	def results(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		render(view: "list", model: [ busquedaInstanceList: Busqueda.list(params), busquedaInstanceTotal: Busqueda.count(), fromSearch:true ] )
+	}
 }
