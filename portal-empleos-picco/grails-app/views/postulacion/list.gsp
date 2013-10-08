@@ -33,10 +33,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'postulacion.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'postulacion.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'postulacion.failures.label', default: 'Failures')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -50,10 +46,6 @@
 						<td>${fieldValue(bean: postulacionInstance, field: "busqueda")}</td>
 					
 						<td><g:formatDate date="${postulacionInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: postulacionInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: postulacionInstance, field: "failures")}</td>
 					
 					</tr>
 				</g:each>

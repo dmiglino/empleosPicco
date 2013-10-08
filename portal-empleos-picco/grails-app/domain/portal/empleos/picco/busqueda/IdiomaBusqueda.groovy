@@ -2,8 +2,7 @@ package portal.empleos.picco.busqueda
 
 import portal.empleos.picco.PortalEmpleosEntity
 import portal.empleos.picco.enumerations.IdiomaEnum
-import portal.empleos.picco.enumerations.Institucion
-import portal.empleos.picco.enumerations.NivelDeConocimientoEnum;
+import portal.empleos.picco.enumerations.NivelDeIdiomaEnum
 
 /**
  * Representa los idiomas que solicita la busqueda
@@ -13,7 +12,7 @@ class IdiomaBusqueda extends PortalEmpleosEntity {
 	
 	IdiomaEnum idioma
 	String tiempoExperiencia
-	NivelDeConocimientoEnum nivel
+	NivelDeIdiomaEnum nivel
 
 	static belongsTo = [ Busqueda busqueda ]
 	

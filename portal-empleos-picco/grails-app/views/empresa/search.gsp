@@ -13,8 +13,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="search-empresa" class="content scaffold-list" role="main">
@@ -26,35 +26,27 @@
 							<tr class="prop">
 						
 								<td valign="top" class="name">
-									<label for="domicilio" >${message(code: 'empresa.domicilio.label', default: 'Domicilio')}</label>
-									<g:textField name="domicilio" />
+									<label for="denominacion" >${message(code: 'empresa.denominacion.label', default: 'Denominacion')}</label>
+									<g:textField name="denominacion" />
 								</td>
 							
 								<td valign="top" class="name">
-									<label for="telefono" >${message(code: 'empresa.telefono.label', default: 'Telefono')}</label>
-									<g:textField name="telefono" />
+									<label for="razonSocial" >${message(code: 'empresa.razonSocial.label', default: 'Razon Social')}</label>
+									<g:textField name="razonSocial" />
 								</td>
-							
-								<td valign="top" class="name">
-									<label for="ciudad" >${message(code: 'empresa.ciudad.label', default: 'Ciudad')}</label>
-									<g:textField name="ciudad" />
-								</td>
+								
+							</tr>
+							<tr class="prop">
 							
 								<td valign="top" class="name">
 									<label for="email" >${message(code: 'empresa.email.label', default: 'Email')}</label>
 									<g:textField name="email" />
 								</td>
-							
+								
 								<td valign="top" class="name">
-									<label for="emailAlternativo" >${message(code: 'empresa.emailAlternativo.label', default: 'Email Alternativo')}</label>
-									<g:textField name="emailAlternativo" />
+									<label for="domicilio" >${message(code: 'empresa.domicilio.label', default: 'Domicilio')}</label>
+									<g:textField name="domicilio" />
 								</td>
-							
-								<td valign="top" class="name">
-									<label for="presentacion" >${message(code: 'empresa.presentacion.label', default: 'Presentacion')}</label>
-									<g:textField name="presentacion" />
-								</td>
-							
 							</tr>
 						</tbody>
 					</table>

@@ -13,7 +13,12 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				<g:if test="${!fromSearch}">
+					<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
+				</g:if>
+				<g:if test="${fromSearch}">
+					<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				</g:if>
 			</ul>
 		</div>
 		<div id="list-institucion" class="content scaffold-list" role="main">
@@ -31,12 +36,6 @@
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'institucion.dateCreated.label', default: 'Date Created')}" />
 					
-						<g:sortableColumn property="error" title="${message(code: 'institucion.error.label', default: 'Error')}" />
-					
-						<g:sortableColumn property="failures" title="${message(code: 'institucion.failures.label', default: 'Failures')}" />
-					
-						<g:sortableColumn property="jobId" title="${message(code: 'institucion.jobId.label', default: 'Job Id')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -48,12 +47,6 @@
 						<td><g:formatBoolean boolean="${institucionInstance.privada}" /></td>
 					
 						<td><g:formatDate date="${institucionInstance.dateCreated}" /></td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "error")}</td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "failures")}</td>
-					
-						<td>${fieldValue(bean: institucionInstance, field: "jobId")}</td>
 					
 					</tr>
 				</g:each>
